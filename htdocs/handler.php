@@ -6,12 +6,10 @@ require_once ('connexion.php');
 
 <?php
 
-// 1e étape : analyser la demande faite à l'URL  (GET) pour déterminer
-// si on souhaite récupérer ou écrire un message :
+// 1e étape : analyser la demande faite à l'URL  (GET) pour déterminer si on souhaite récupérer ou écrire un message :
 
 
-    // on a deux tâches : un tâche de restitution des messages et une tâche 
-    // de sauvegarde des messages :
+    // on a deux tâches : un tâche de restitution des messages et une tâche de sauvegarde des messages :
 
     $task = 'list';
 
@@ -21,11 +19,11 @@ require_once ('connexion.php');
 
     // si on a pas de valeurs dans le GET, alors la valeur par défaut sera list
 
-    if ($task == "write") { 
+     if ($task == "write") { 
         postMessage();
     } else {
         getMessages();
-    }
+    } 
 
   
 
@@ -33,7 +31,8 @@ require_once ('connexion.php');
     // 2e étape : on crée un fonction qui va nous permettre de récupérer les données :
 
     function getMessages() {
-        global $bdd; // on précise que l'on doit se servir de la variable bdd qui est à l'extérieur de la fonction
+        // on précise que l'on doit se servir de la variable bdd qui est à l'extérieur de la fonction
+        global $bdd;
         // on requête la BD pour sortir les 20 derniers messages et on les affiche par date ordre décroissant :
         $resultats = $bdd -> query ("SELECT * FROM messages ORDER BY created_ad DESC LIMIT 20");
         // on traite les résultats : la variable messages va aller chercher toutes les lignes de données et va les envoyer sous forme de tableau
@@ -46,9 +45,9 @@ require_once ('connexion.php');
     // on veut écrire les messages, il faut analyser les paramètres envoyés en POST et les sauver dans la BD :
 
     function postMessage() {
-        global $bdd; // on précise que l'on doit se servir de la variable bdd qui est à l'extérieur de la fonction
-        // analyser les paramètres passés en POST (author et content)
-            // si les clés author et content n'existent pas dans POST, alors j'affiche un tableau d'erreur :
+        // on précise que l'on doit se servir de la variable bdd qui est à l'extérieur de la fonction
+        global $bdd; 
+        // analyser les paramètres passés en POST (author et content), si les clés author et content n'existent pas dans POST, alors j'affiche un tableau d'erreur :
         if(!array_key_exists('author', $_POST) || !array_key_exists('content', $_POST)) {
             echo json_encode (['status' => 'error', 'message' => 'one field or many have not been sent']);
             return;
@@ -64,8 +63,14 @@ require_once ('connexion.php');
             "content" => $content
         ]);
         // donner un statut de succès ou erreur au format JSON
-        echo json_encode(['status' => 'success']);
+        echo json_encode(['response',$query]);
+
+     
     }
+
+   
+
+    ?>
 
 
 

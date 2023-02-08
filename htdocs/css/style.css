@@ -1,16 +1,9 @@
-/**
- * Typographies Google Maggle !
- */
- @import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Ubuntu');
-
-
-
- h1 {
+h1 {
    font-family: "Cinzel Decorative", cursive;
  }
  
  body, input, button {
-   font-family: Ubuntu, sans-serif;
+   font-family: Arial, Helvetica, sans-serif;
  }
  
  header {
@@ -18,11 +11,12 @@
  }
  
  .messages {
-   background-color: steelblue;
+   background-color:steelblue;
    border-radius: 5px;
    padding: 1em;
    height: 50vh;
    overflow: auto;
+   border: 2px solid black;
  }
  
  .message {
@@ -33,6 +27,20 @@
  .date, .author {
    font-weight: bold;
  }
+
+ .nicknames {
+  background-color: rgba(99, 178, 231, 0.26);
+  border-radius: 5px;
+  height: 50vh;
+  overflow: auto;
+  text-align: center;
+  color: steelblue;
+  font-weight: bold;
+  font-size: 20px;
+  border: 2px solid black;
+ }
+
+
  
  form {
    display: flex;
@@ -57,5 +65,5 @@
  }
 
  button[type="submit"]{
-    width: 20%;
+    width: 10%;
   }
