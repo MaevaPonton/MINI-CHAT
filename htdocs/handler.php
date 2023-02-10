@@ -63,9 +63,7 @@ require_once ('connexion.php');
             "content" => $content
         ]);
         // donner un statut de succès ou erreur au format JSON
-        echo json_encode(['response',$query]);
-
-     
+        echo json_encode(['status'=> 'success']);
     }
 
    

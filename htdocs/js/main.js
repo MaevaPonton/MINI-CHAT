@@ -45,32 +45,26 @@ async function postMessage(event) {
    
 
     // elle doit configurer une requête AJAX en POST et envoyer les données
-
    fetch('handler.php?task=write', {
         method: 'post',
         body: data,
-    }).then(getMessages());
+    }).then(getMessages()).then(getUsers());
     
-
-        return content.value = '';
-       /*  return content.focus();
-        getMessages();  */
 
 }
 
-getMessages();  
+ 
 // on va lier cette dernière fonction à la soumission du formulaire :
-
 document.querySelector('form').addEventListener('submit',postMessage); // je prends mon formulaire et j'ajoute un écouteur d'évènements sur l'évènement submit tu vas appeler la fonction postMessage 
 
 
-
 // on va faire une intervalle qui demande le rafraichissement des messages toutes les 3 secondes et qui donne l'illusion du temps réel :
-
 const interval = window.setInterval(getMessages, 1000); // je demande à mon navigateur de créer une intervalle où je vais appeler getMessages toutes les 3000 millisecondes
+const interval2 = window.setInterval(getUsers, 1000); // je demande à mon navigateur de créer une intervalle où je vais appeler getMessages toutes les 3000 millisecondes
 
 
 
 // je veux que dès le chargement de la page, on appelle getMessages pour supprimer le temps de chargement de 3 secondes à l'ouverture de la page
-
+getMessages(); 
+getUsers(); 
 

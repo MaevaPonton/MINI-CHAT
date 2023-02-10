@@ -1,0 +1,88 @@
+h1 {
+  padding-top: 30px;
+  font-family: "Cinzel Decorative", cursive;
+  color: white;
+ }
+ 
+ body, input, button {
+   font-family: Arial, Helvetica, sans-serif;
+ }
+
+ body {
+  background-image: url(./images/pokemon.gif);
+  background-size: cover;
+ }
+ 
+ header {
+   text-align: center;
+ }
+ 
+ .messages {
+   
+   border-radius: 20px;
+   padding: 1em;
+   height: 60vh;
+   overflow: auto;
+   border: 5px solid white;
+   background-color: transparent;
+ }
+ 
+ .message {
+   color: white;
+   padding: 0.3em;
+ }
+ 
+ .date, .author {
+   font-weight: bold;
+ }
+
+ .nicknames {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 60vh;
+  overflow: auto;
+  border: 5px solid white;
+ }
+
+
+ .pseudo {
+  color: white;
+  font-size: 18px;
+  padding-left: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+ }
+
+
+ 
+ form {
+   margin-top: 1em;
+   justify-content: space-between;
+ }
+ 
+ input, button {
+   padding: 0.5em;
+ }
+ 
+ input {
+   margin-right: 10px;
+ }
+ 
+ #author {
+   width: 23%;
+   background-color: transparent;
+   border: 3px solid white;
+ }
+ 
+ #content {
+   width: 61%;
+   background-color: transparent;
+   border: 3px solid white;
+ }
+
+ button[type="submit"]{
+    width: 15%;
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+  }
